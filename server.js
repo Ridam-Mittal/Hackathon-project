@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import morgan from "morgan"
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authroute.js"
+import emissionRoutes from "./routes/emissionRoute.js"
 import cors from "cors"
 
 // configure dotenv
@@ -23,7 +24,7 @@ app.use(morgan("dev"));
 
 // routes
 app.use("/api/auth", authRoutes);
-
+app.use("/api/emissions", emissionRoutes);
 // rest api
 app.get('/', (req, res) => {
     res.send(
